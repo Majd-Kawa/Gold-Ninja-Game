@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ninja Gold Game</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    {% if not request.session.game %}
+    <h1>Ninja Gold Game</h1>
+    <div class="ninja-start">
+        <img src="{% static 'images/ninja.png' %}" alt="gold ninja photo">
+        <h2>Let's start the game!</h2>
+        <h3>But first, set up your goals here:</h3>
+        <form action="/start_game" method="post" class="start-game flex-column">
+            {% csrf_token %}
+            <label>Goal Gold: </label>
+            <input type="number" name="goal" id="goal" required>
+            <label>Number of moves: </label>
+            <input type="number" name="max_moves" id="max_moves" required>
+            <img src="{% static 'images/start.png' %}" alt="let's start photo">
+            <button type="submit">Let's Start</button>
+        </form>
+    </div>
+    {% endif %}
+
+    {% if request.session.game %}
+    <h1>Ninja Gold Game</h1>
+    <div class="game">
+        <table>
+            <tr>
+                <th>Your Gold : </th>
+                <th>{{ request.session.gold }}</th>
+            </tr>
+            <tr>
+                <th>Your Moves : </th>
+                <th>{{ request.session.moves }}</th>
+            </tr>
+            <tr>
+                <th>Your Maximum Moves : </th>
+                <th>{{ request.session.max_moves }}</th>
+            </tr>
+            <tr>
+                <th>Your Goal : </th>
+                <th>{{ request.session.goal }}</th>
+            </tr>
+        </table>
+    </div>
+        {% if not request.session.game_over %}
+            <div class="location-container">
+                <div class="location flex-column farm">
+                    <h2>Farm</h2>
+                    <p>(earn 10-20 gold)</p>
+                    <form action="{% url 'process_money' %}" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="location" value="farm">
+                        <input type="submit" value="Find Gold!">
+                    </form>
+                </div>
+                <div class="location flex-column cave">
+                    <h2>Cave</h2>
+                    <p>(earn 10-20 gold)</p>
+                    <form action="{% url 'process_money' %}" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="location" value="cave">
+                        <input type="submit" value="Find Gold!">
+                    </form>
+                </div>
+                <div class="location flex-column house">
+                    <h2>House</h2>
+                    <p>(earn 10-20 gold)</p>
+                    <form action="{% url 'process_money' %}" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="location" value="house">
+                        <input type="submit" value="Find Gold!">
+                    </form>
+                </div>
+                <div class="location flex-column quest">
+                    <h2>Quest</h2>
+                    <p>(earn/takes 0-50 gold)</p>
+                    <form action="{% url 'process_money' %}" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="location" value="quest">
+                        <input type="submit" value="Find Gold!">
+                    </form>
+                </div>
+            </div>
+        {% endif %}
+
+    <h2>Activities:</h2>
+    <div class="activities">
+        {% for activity in request.session.activities %}
+            {% if activity.gold >= 0 %}
+                <p class="green">
+                {{ activity.message }}
+                </p>
+            {% else %}
+                <p class="red">
+                    {{ activity.message }}
+                </p>
+            {% endif %}
+        {% endfor %}
+    </div>
+    {% if request.session.game_over %}
+    <h2 class="game-over">
+        {% if request.session.gold >= request.session.goal %}
+        <div class="result">
+            <img src="{% static 'images/winner.png' %}" alt="winner picture">
+            <p>Congrats, we have a winner!</p>
+            <p>Reset to play again.</p>
+        </div>
+        {% else %}
+        <div class="result">
+            <img src="{% static 'images/game_over.png' %}" alt="game over picture">
+            <p>Opps, You didn't make it.</p>
+            <p>Do you want to try again?</p>
+            <p>Reset to play again.</p>
+        </div>
+        {% endif %}
+    </h2>
+    <form action="/reset" method="post" class="flex-column">
+        {% csrf_token %}
+        <img src="{% static 'images/reset.png' %}" alt="reset button photo">
+        <button>Reset Game</button>
+    </form>
+    {% endif %}
+    {% endif %}
+
+
+</body>
+
+</html>
