@@ -1,4 +1,4 @@
-## Gold-Ninja-Game
+## Gold Ninja Game
 
 📖 Project Overview
 Ninja Gold is a simple web-based mini game where players take on the role of a ninja trying to collect gold. The player starts with 0 gold and can visit different locations such as the farm, cave, house, or quest to earn—or sometimes lose—gold.
@@ -6,12 +6,12 @@ Each action updates the total gold count and logs the activity, creating a runni
 
 
 ## ✨ Features
-•	🎮 Interactive gameplay with multiple locations 
-•	💰 Earn or lose gold depending on the location 
-•	📊 Real-time gold counter 
-•	📝 Activity log tracking all actions 
-•	🎲 Randomized outcomes for dynamic gameplay 
-•	🔄 Reset option to start over 
+- 🎮 Interactive gameplay with multiple locations 
+- 💰 Earn or lose gold depending on the location 
+- 📊 Real-time gold counter 
+-	📝 Activity log tracking all actions 
+-	🎲 Randomized outcomes for dynamic gameplay 
+-	🔄 Reset option to start over 
 
 
 ## 📸 Screenshots
@@ -20,9 +20,9 @@ Activity Log
 
 
 ## 🛠️ Tech Stack
-•	Frontend: HTML, CSS
-•	Backend: Django (Python) 
-•	Database: SQLite (default) 
+-	Frontend: HTML, CSS
+-	Backend: Django (Python) 
+-	Database: SQLite (default) 
 
 
 ## ⚙️ Installation & Setup
@@ -32,11 +32,12 @@ cd ninja_gold
 2. Create virtual environment
 python -m venv env
 
-# Windows
-call env\Scripts\activate
+  # Windows
+    call env\Scripts\activate
+  
+  # Mac/Linux
+    source env/bin/activate
 
-# Mac/Linux
-source env/bin/activate
 3. Install dependencies
 pip install -r requirements.txt
 4. Start server
@@ -49,10 +50,10 @@ http://127.0.0.1:8000
 1.	Start the game by setting your ‘Goal Gold’ and ‘Number of Moves’
 2.	Click ‘Let’s Start’ to begin
 3.	Choose a location: 
-  o	🌾 Farm → earn 10–20 gold
-  o	🕳️ Cave → earn 10–20 gold
-  o	🏠 House → earn 10–20 gold
-  o	❓ Quest → earn or lose 0-50 gold (high risk, high reward) 
+  - 🌾 Farm → earn 10–20 gold
+  - 🕳️ Cave → earn 10–20 gold
+  - 🏠 House → earn 10–20 gold
+  - ❓ Quest → earn or lose 0-50 gold (high risk, high reward) 
 4.	Each action reduces your available moves
 5.	Try to reach your goal before you run out of moves
 6.	Check the ‘Activities log’ to see your progress
@@ -63,7 +64,7 @@ http://127.0.0.1:8000
 
 
 ## 📌 Future Improvements
-•	Add animations and sound effects 
-•	Add leaderboard functionality 
-•	Store data in a persistent database 
+- Add animations and sound effects
+- Add leaderboard functionality
+- Store data in a persistent database 
 
