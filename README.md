@@ -15,8 +15,17 @@ Each action updates the total gold count and logs the activity, creating a runni
 
 
 ## 📸 Screenshots
-Main Game Interface
-Activity Log
+### Main Game Setup Interface
+![Main game setup interface](screenshots/main-game-setup-interface.png)
+
+### Game Board
+![Game activity board](screenshots/game-activity-board.png)
+
+### Lose Screen
+![Lose screen](screenshots/lose-screen.png)
+
+### Win Screen
+![Win screen](screenshots/win-screen.png)
 
 
 ## 🛠️ Tech Stack
