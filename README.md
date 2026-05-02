@@ -32,10 +32,10 @@ cd ninja_gold
 2. Create virtual environment
 python -m venv env
 
-  # Windows
+   Windows
     call env\Scripts\activate
   
-  # Mac/Linux
+   Mac/Linux
     source env/bin/activate
 
 3. Install dependencies
