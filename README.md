@@ -26,26 +26,6 @@ Activity Log
 
 
 ## ⚙️ Installation & Setup
-1. Clone repo
-git clone https://github.com/Majd-Kawa/Gold-Ninja-Game.git
-cd ninja_gold
-2. Create virtual environment
-python -m venv env
-
-   Windows
-    call env\Scripts\activate
-  
-   Mac/Linux
-    source env/bin/activate
-
-3. Install dependencies
-pip install -r requirements.txt
-4. Start server
-python manage.py runserver
-5. Visit in browser
-http://127.0.0.1:8000
-
-## ⚙️ Installation & Setup
 
 ### 1. Clone repo
 ```bash
