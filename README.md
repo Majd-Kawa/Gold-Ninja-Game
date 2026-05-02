@@ -45,6 +45,45 @@ python manage.py runserver
 5. Visit in browser
 http://127.0.0.1:8000
 
+## ⚙️ Installation & Setup
+
+### 1. Clone repo
+```bash
+git clone https://github.com/Majd-Kawa/Gold-Ninja-Game.git
+cd ninja_gold
+```
+
+### 2. Create virtual environment
+```bash
+python -m venv env
+```
+
+### 3. Activate virtual environment
+
+**Windows**
+```bash
+env\Scripts\activate
+```
+
+**Mac/Linux**
+```bash
+source env/bin/activate
+```
+
+### 4. Install dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 5. Start server
+```bash
+python manage.py runserver
+```
+
+### 6. Visit in browser
+```
+http://127.0.0.1:8000
+```
 
 ## 🚀 How to Play
 1.	Start the game by setting your ‘Goal Gold’ and ‘Number of Moves’
