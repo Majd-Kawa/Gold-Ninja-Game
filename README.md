@@ -51,7 +51,7 @@ python -m venv env
 
 **Windows**
 ```bash
-env\Scripts\activate
+call env\Scripts\activate
 ```
 
 **Mac/Linux**
