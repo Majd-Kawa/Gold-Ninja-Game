@@ -1,6 +1,6 @@
 ## Gold Ninja Game
 
-📖 Project Overview
+### 📖 Project Overview
 Ninja Gold is a simple web-based mini game where players take on the role of a ninja trying to collect gold. The player starts with 0 gold and can visit different locations such as the farm, cave, house, or quest to earn—or sometimes lose—gold.
 Each action updates the total gold count and logs the activity, creating a running history of the player’s journey.
 
